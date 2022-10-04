@@ -9,7 +9,7 @@ from datetime import datetime
 import datetime
 
 screen = Tk()
-screen.geometry("500x500")
+screen.geometry("500x600")
 screen.title("PAGE Bill Generator")
 screen.iconbitmap('.\\res\\icon.ico')
 bg=ImageTk.PhotoImage(file=".\\res\\screen.png")
@@ -170,20 +170,20 @@ def register():
 
 heading = Label(text = "PAGE", fg = "black", bg = "grey", width = "500", height = "3").pack()
 
-Label(text = "NAME :",bg="#271c3a",foreground="white",font=("Dosis",16)).place(x = 25, y = 30)
-Label(text = "ITEM :",bg="#271c3a",foreground="white",font=("Dosis",16)).place(x = 25, y = 110)
-Label(text = "PRICE :",bg="#271c3a",foreground="white",font=("Dosis",16)).place(x = 25, y = 190)
-Label(text = "QUANTITY :",bg="#271c3a",foreground="white",font=("Dosis",16)).place(x = 25, y = 270)
+Label(text = "NAME of Buyer :",bg="#271c3a",foreground="white",font=("Dosis",16)).place(x = 25, y = 30)
+Label(text = "ITEM Purchased:",bg="#271c3a",foreground="white",font=("Dosis",16)).place(x = 25, y = 110)
+Label(text = "PRICE of Item:",bg="#271c3a",foreground="white",font=("Dosis",16)).place(x = 25, y = 190)
+Label(text = "QUANTITY of Item:",bg="#271c3a",foreground="white",font=("Dosis",16)).place(x = 25, y = 270)
 
 name = StringVar()
 item = StringVar()
 price=StringVar()
 qty=StringVar()
 
-Entry(screen,bg="white", textvariable = name).place(x = 28, y = 68)
-Entry(screen,bg="white", textvariable = item).place(x = 28, y = 145)
-Entry(screen, bg="white",textvariable = price).place(x = 28, y = 225)
-Entry(screen,bg="white", textvariable = qty).place(x = 28, y = 305)
+Entry(screen,bg="yellow", textvariable = name).place(x = 28, y = 68)
+Entry(screen,bg="yellow", textvariable = item).place(x = 28, y = 145)
+Entry(screen, bg="yellow",textvariable = price).place(x = 28, y = 225)
+Entry(screen,bg="yellow", textvariable = qty).place(x = 28, y = 305)
 
 def clear():  
     item.set("")
@@ -193,8 +193,8 @@ def clear():
     count=count+1
     return
 
-Button(screen, text = "ADD",font=("Dosis",12),width = "6",height="1",bg = "#c6c6c7", command =lambda:[check(),clear()] ).place(x = 220, y = 345)
+Button(screen, text = "ADD Data",font=("Dosis",12),width = "6",height="1",bg = "#c6c6c7", command =lambda:[check(),clear()] ).place(x = 220, y = 345)
 
-Button(screen, text = "GENERATE",font=("Dosis",12), width = "45", bg = "#c6c6c7", command = register,).place(x = 45, y = 410)
+Button(screen, text = "GENERATE Bill",font=("Dosis",12), width = "45", bg = "#c6c6c7", command = register,).place(x = 45, y = 410)
 screen.bind('<Configure>', resizer)
 screen.mainloop()
